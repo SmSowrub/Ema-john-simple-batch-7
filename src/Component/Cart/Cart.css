@@ -1,0 +1,32 @@
+.cart{
+    width: 300px;
+    height: 508px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding:0 5px;
+    margin: 10px;
+    position: relative;
+}
+
+.cart h2{
+    font-size: 21px;
+}
+.cart p{
+    color: grey;
+}
+.imgs{
+    
+    text-align: center;
+}
+.cart img{
+  
+    width: 250px;
+    height: 250px;
+}
+.buttons{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color:  #FFE0B3;;
+}
