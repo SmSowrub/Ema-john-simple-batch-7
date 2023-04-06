@@ -3,10 +3,15 @@ import './Shop.css'
 
 import Cart from '../Cart/Cart';
 import CartSummary from '../CartSummary/CartSummary';
-import { addToDb, getShoppingCart } from '../../utilities/fakedb';
+import { addToDb, deleteShoppingCart, getShoppingCart } from '../../utilities/fakedb';
 const Shop = () => {
     const [products, setProducts]= useState([]);
     const [cart, setCart]=useState([]);
+
+    const handleClearCart=()=>{
+        setCart([])
+        deleteShoppingCart()
+    }
     useEffect(()=>{
         fetch(`products.json`)
         .then(res=>res.json())
@@ -45,7 +50,7 @@ const Shop = () => {
            }
            </div>
            <div>
-            <CartSummary cart={cart}></CartSummary>
+            <CartSummary allClearData={handleClearCart} cart={cart}></CartSummary>
            </div>
         </div>
     );

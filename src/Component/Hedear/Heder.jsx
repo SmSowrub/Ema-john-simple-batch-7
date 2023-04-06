@@ -1,6 +1,7 @@
 import React from 'react';
 import './Heder.css'
 import logo from '../../images/Logo.svg'
+import { Link } from 'react-router-dom';
 
 const Heder = () => {
     return (
@@ -11,10 +12,10 @@ const Heder = () => {
                 </div>
                 <div>
                     <ul className='menoPart'>
-                        <li><a href="./order">Order</a></li>
-                        <li><a href="./Review">Order Review</a></li>
-                        <li><a href="Manage-Inventory">Manage Inventory</a></li>
-                        <li><a href="./Login">Login</a></li>
+                        <Link className='links' to="/">Shop</Link>
+                        <Link className='links' to="/order">Orders</Link>
+                        <Link className='links' to="/inventory">Manage Inventory</Link>
+                        <Link className='links' to="/login">Login</Link>
                     </ul>
                 </div>
             </div>

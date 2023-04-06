@@ -20,12 +20,12 @@
     list-style: none;
     
 }
-.menoPart li a{
+.links{
     text-decoration: none;
     color: white;
     padding-right: 32px;
 
 }
-.menoPart li a:hover{
+.links:hover{
     color: orange;
 }

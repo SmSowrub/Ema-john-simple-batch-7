@@ -2,4 +2,27 @@
     background-color: chartreuse;
     position: sticky;
     top: 0;
+    padding: 20px;
+    border-radius: 10px;
+}
+.allCart p{
+    color: black;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+.clearBtn{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FF3030;
+    margin: 10px auto;
+    height: 40px;
+}
+.clearCart{
+    color: white;
+}
+.fontIcon{
+    color: white;
 }
