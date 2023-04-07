@@ -1,3 +1,13 @@
 .allReview{
     margin: 50px auto;
 }
+.btn-proceed{
+    background-color: #ff9900;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px auto;
+    border-radius: 10px;
+    color: white;
+}
