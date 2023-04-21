@@ -8,11 +8,26 @@
     position: relative;
 }
 
-.cart h2{
-    font-size: 21px;
+.cart h4{
+    font-size: 18px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+.cart h5{
+    font-size: 16px;
+    margin-top: 5px;
+    font-weight: bold;
+    color: red;
 }
 .cart p{
-    color: grey;
+    color: gray;
+    padding: 5px;
+}
+.cart h6{
+    color: blue;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: bold;
 }
 .imgs{
     background-color: white;
@@ -26,6 +41,8 @@
     height: 250px;
 }
 .buttons{
+    padding: 10px 5px;
+    border-radius: 7px;
     position: absolute;
     bottom: 0;
     left: 0;

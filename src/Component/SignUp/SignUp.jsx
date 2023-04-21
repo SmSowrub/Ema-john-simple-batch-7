@@ -1,38 +1,46 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
+import { Link } from 'react-router-dom';
 
-const Login = () => {
-    const {UserLogIn}=useContext(AuthContext)
-
+const SignUp = () => {
     const [error, setError]=useState()
+    const {UserSignIn}= useContext(AuthContext)
 
-    const handleLogIn = event => {
+    const handleSignUp = event => {
         event.preventDefault()
         const form = event.target;
         const email =form.email.value;
         const password =form.password.value;
-        console.log(email, password);
+        const confirm = form.confirm.value;
+        console.log(email, password, confirm);
         setError('')
         form.reset('')
-        UserLogIn(email, password)
-        .then(result => {
-            const users =result.user;
-            console.log(users);
-        })
-        .catch(error=>{
-            console.error(error.massage);
-        })
+        if(password !== confirm){
+            setError('Your password did not match')
+            return
+        }
+      else if(password.length <6){
+        setError('Password must be at least 6 characters Long')
+        return
+      }
 
+      UserSignIn(email, password)
+      .then(result=>{
+        const users = result.user;
+        console.log(users);
+      })
+      .catch(error=>{
+        console.log(error.massage)
+      })
     }
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col">
                 <div className="text-center ">
-                    <h1 className="text-5xl font-bold">Login now!</h1>
-                    
+                    <h1 className="text-5xl font-bold">SignIn now!</h1>
+
                 </div>
-                <form onSubmit={handleLogIn} className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <form onSubmit={handleSignUp} className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className="card-body">
                         <div className="form-control">
                             <label className="label">
@@ -45,6 +53,10 @@ const Login = () => {
                                 <span className="label-text">Password</span>
                             </label>
                             <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+                            <label className="label">
+                                <span className="label-text">Confirm Password</span>
+                            </label>
+                            <input type="password" name='confirm' placeholder="password" className="input input-bordered" required />
                             <p><small>{error}</small></p>
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
@@ -54,7 +66,7 @@ const Login = () => {
                             <button className="btn btn-primary">Login</button>
                         </div>
                         <label className="label">
-                            <Link to='/signUp' className="label-text-alt link link-hover">Ema-john you new user? Please SignUp</Link>
+                            <Link to='/login' className="label-text-alt link link-hover">Already have an account?</Link>
                         </label>
                     </div>
                 </form>
@@ -63,4 +75,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default SignUp;

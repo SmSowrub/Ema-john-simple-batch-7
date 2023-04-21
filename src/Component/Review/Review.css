@@ -5,17 +5,19 @@
     border-radius: 10px;
     margin: 21px auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    
 }
 .review img{
     width: 91px;
     padding: 8px;
     margin-right: 10px;
 }
-.fixed{
+.data{
     color: #2A414F;
-    font-size: 16px;
+    font-size: 15px;
+    
 }
 .price{
     color: #FF9900;
